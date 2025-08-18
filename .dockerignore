@@ -1,0 +1,15 @@
+# Reduce Docker build context size
+.git
+.gitignore
+.idea
+.junie
+node_modules
+vendor
+var
+.tmp
+.cache
+.env.local
+.env.*.local
+Dockerfile
+docker-compose.*
+.dockerignore
