@@ -10,11 +10,11 @@ services:
     volumes:
       - ./:/app
       - composer-cache:/tmp/composer
+    env_file:
+      - .env
+      - .env.local
     environment:
-      APP_ENV: dev
-      # Symfony reads env vars over .env files; adjust as needed
-      DATABASE_URL: "postgresql://symfony:symfony@db:5432/symfony?serverVersion=16&charset=utf8"
-      REDIS_URL: "redis://redis:6379"
+      APP_ENV: ${APP_ENV:-dev}
     depends_on:
       - db
       - redis
@@ -25,10 +25,13 @@ services:
   db:
     image: postgres:16
     container_name: habit-tracker-db
+    env_file:
+      - .env
+      - .env.local
     environment:
-      POSTGRES_DB: symfony
-      POSTGRES_USER: symfony
-      POSTGRES_PASSWORD: symfony
+      POSTGRES_DB: ${POSTGRES_DB:-symfony}
+      POSTGRES_USER: ${POSTGRES_USER:-symfony}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-symfony}
     volumes:
       - pgdata:/var/lib/postgresql/data
     ports:

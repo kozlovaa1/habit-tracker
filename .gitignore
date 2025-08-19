@@ -9,6 +9,9 @@
 /vendor/
 ###< symfony/framework-bundle ###
 
+## IDE
+.idea
+
 ## AI
 .junie
 .claude

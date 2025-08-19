@@ -16,5 +16,8 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 WORKDIR /app
 
+###> recipes ###
+###< recipes ###
+
 # Default command keeps container alive for exec; docker-compose overrides with a dev server command
 CMD ["php", "-v"]
