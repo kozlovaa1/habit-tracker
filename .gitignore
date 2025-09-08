@@ -11,8 +11,21 @@
 
 ## IDE
 .idea
+.vscode/
+.DS_Store
+Thumbs.db
 
 ## AI
 .junie
 .claude
 .amazonq
+
+# PHPUnit caches and coverage
+/.phpunit.cache/
+.phpunit.result.cache
+/coverage/
+
+###> phpunit/phpunit ###
+/phpunit.xml
+/.phpunit.cache/
+###< phpunit/phpunit ###

@@ -16,5 +16,15 @@ services:
     App\:
         resource: '../src/'
 
+    # Controllers are registered as services with proper tags and made public for routing
+    App\Controller\:
+        resource: '../src/Controller/'
+        tags: ['controller.service_arguments']
+        public: true
+
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    # Interface aliases for autowiring
+    App\Service\ClockInterface: '@App\Service\SystemClock'
+    App\Service\IdGeneratorInterface: '@App\Service\UuidGenerator'
